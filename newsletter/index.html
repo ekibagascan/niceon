@@ -101,7 +101,8 @@
     .nav-inner {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 14px;
     }
 
     .logo {
@@ -846,7 +847,7 @@
     @media (max-width: 900px) {
       .hero-inner {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
       }
 
       .hero-visual { display: none; }
@@ -857,24 +858,49 @@
 
       .why-inner {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
       }
 
       .why-visual { display: none; }
+
+      #benefits, #topics, #why, #cta { padding: 72px 0; }
     }
 
     @media (max-width: 600px) {
+      .container { padding: 0 16px; }
+
+      #hero { padding: 96px 0 56px; }
+
+      #benefits, #topics, #why, #cta { padding: 56px 0; }
+
+      h1 { font-size: 30px; }
+      h2 { font-size: 24px; }
+
+      .hero-sub { font-size: 15px; }
+
       .benefits-grid { grid-template-columns: 1fr; }
 
       .form-row { flex-direction: column; }
 
-      .btn-submit { width: 100%; }
+      .btn-submit { width: 100%; padding: 14px; }
 
-      .why-stats { gap: 24px; }
+      .email-input { width: 100%; }
 
-      .footer-inner { flex-direction: column; text-align: center; }
+      .why-stats { gap: 20px; flex-wrap: wrap; }
 
-      .footer-links { justify-content: center; }
+      .why-stats .stat-item { min-width: 80px; }
+
+      .section-desc { font-size: 15px; }
+
+      .topics-pills { gap: 8px; }
+
+      .pill { font-size: 13px; padding: 8px 14px; }
+
+      .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+
+      .footer-links { justify-content: center; flex-wrap: wrap; gap: 16px; }
+
+      .hud-divider { margin: 0 0 36px; }
     }
 
     /* ─── DIVIDER ──────────────────────────────────────── */
