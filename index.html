@@ -20,19 +20,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:          #0a0800;
-      --bg-card:     #120f00;
-      --bg-card2:    #1a1400;
-      --border:      rgba(245, 160, 0, 0.15);
-      --border-glow: rgba(245, 160, 0, 0.45);
-      --cyan:        #F5A000;
+      --bg:          #FFFBF5;
+      --bg-card:     #FFFFFF;
+      --bg-card2:    #FEF6E8;
+      --border:      rgba(200, 130, 0, 0.15);
+      --border-glow: rgba(200, 130, 0, 0.4);
+      --cyan:        #D4820A;
       --cyan-dim:    #E08E00;
       --cyan-dark:   #7A4800;
-      --teal:        #FFB800;
+      --teal:        #F5A000;
       --amber:       #FF6B00;
-      --text:        #f0ebe0;
-      --text-muted:  #a89880;
-      --text-dim:    #6b5a40;
+      --text:        #1a1100;
+      --text-muted:  #5a4520;
+      --text-dim:    #9a7840;
       --white:       #ffffff;
       --font-sans:   'Space Grotesk', system-ui, sans-serif;
       --font-mono:   'Space Mono', monospace;
@@ -56,8 +56,8 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(245,160,0,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(255,184,0,0.04) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(245,160,0,0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(255,184,0,0.06) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
@@ -68,8 +68,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(245,160,0,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,160,0,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(200,130,0,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,130,0,0.07) 1px, transparent 1px);
       background-size: 48px 48px;
       pointer-events: none;
       z-index: 0;
@@ -93,7 +93,7 @@
       top: 0; left: 0; right: 0;
       z-index: 100;
       padding: 16px 0;
-      background: rgba(10, 8, 0, 0.85);
+      background: rgba(255, 251, 245, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -144,7 +144,7 @@
       font-family: var(--font-mono);
       font-size: 14px;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text);
       letter-spacing: 0.05em;
     }
 
@@ -178,7 +178,7 @@
       transform: translateY(-50%);
       width: 680px;
       height: 680px;
-      opacity: 0.07;
+      opacity: 0.12;
       pointer-events: none;
     }
 
@@ -216,7 +216,7 @@
       font-size: clamp(36px, 5vw, 58px);
       font-weight: 700;
       line-height: 1.12;
-      color: var(--white);
+      color: var(--text);
       margin-bottom: 24px;
       letter-spacing: -0.02em;
     }
@@ -251,7 +251,7 @@
 
     .email-input {
       flex: 1;
-      background: rgba(255,255,255,0.04);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 14px 18px;
@@ -447,7 +447,7 @@
     h2 {
       font-size: clamp(26px, 3.5vw, 38px);
       font-weight: 700;
-      color: var(--white);
+      color: var(--text);
       letter-spacing: -0.02em;
       line-height: 1.2;
       margin-bottom: 16px;
@@ -523,7 +523,7 @@
     .benefit-card h3 {
       font-size: 15px;
       font-weight: 600;
-      color: var(--white);
+      color: var(--text);
       margin-bottom: 8px;
       line-height: 1.35;
     }
@@ -546,6 +546,7 @@
     #topics {
       padding: 100px 0;
       border-top: 1px solid var(--border);
+      background: var(--bg-card2);
     }
 
     .topics-header {
@@ -574,7 +575,7 @@
       font-weight: 500;
       border: 1px solid var(--border);
       color: var(--text-muted);
-      background: rgba(255,255,255,0.02);
+      background: #FFF8EE;
       cursor: default;
       transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.15s;
     }
@@ -729,6 +730,7 @@
     #cta {
       padding: 120px 0;
       border-top: 1px solid var(--border);
+      background: var(--bg-card2);
     }
 
     .cta-inner {
