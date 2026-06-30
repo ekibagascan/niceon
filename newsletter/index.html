@@ -101,64 +101,54 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 16px 0;
-      background: rgba(255, 251, 245, 0.92);
+      padding: 14px 0;
+      background: rgba(255, 251, 245, 0.95);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
 
+    /* True 3-column centering: logo | links | badge */
     .nav-inner {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: center;
-      gap: 14px;
+      gap: 16px;
     }
 
+    .nav-logo-col { display: flex; align-items: center; }
+    .nav-center-col { display: flex; align-items: center; gap: 4px; }
+    .nav-right-col { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+
     .logo {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
       text-decoration: none;
     }
 
-    .logo-mark {
-      width: 32px; height: 32px;
-      border: 1.5px solid var(--cyan);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .logo-mark::before {
-      content: '';
-      position: absolute;
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      border: 1.5px solid var(--cyan);
-      opacity: 0.5;
-    }
-
-    .logo-mark::after {
-      content: '';
-      position: absolute;
-      width: 1px; height: 100%;
-      background: var(--cyan);
-      opacity: 0.4;
-      transform: rotate(45deg);
-    }
-
-    .logo-text {
+    .logo-bubble {
+      background: var(--teal);
+      color: #fff;
       font-family: var(--font-mono);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
-      color: var(--text);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
+      padding: 5px 11px;
+      border-radius: 7px;
+      line-height: 1;
     }
 
-    .logo-text span { color: var(--cyan); }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-link:hover { background: var(--bg-card2); color: var(--cyan); }
 
     .nav-badge {
       font-family: var(--font-mono);
@@ -169,6 +159,7 @@
       border-radius: 20px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     /* ─── HERO ─────────────────────────────────────────── */
@@ -878,6 +869,10 @@
     @media (max-width: 600px) {
       .container { padding: 0 16px; }
 
+      .nav-inner { grid-template-columns: auto 1fr auto; gap: 8px; }
+      .nav-center-col { justify-content: center; }
+      .nav-badge { display: none; }
+
       #hero { padding: 96px 0 56px; }
 
       #benefits, #topics, #why, #cta { padding: 56px 0; }
@@ -953,11 +948,22 @@
   <!-- ─── NAV ─────────────────────────────────────────── -->
   <nav>
     <div class="container nav-inner">
-      <a href="#" class="logo" aria-label="NiceOn">
-        <div class="logo-mark" aria-hidden="true"></div>
-        <span class="logo-text">NICE<span>ON</span></span>
-      </a>
-      <span class="nav-badge">Future Brief</span>
+      <!-- Left: logo -->
+      <div class="nav-logo-col">
+        <a href="/" class="logo" aria-label="NiceOn">
+          <span class="logo-bubble">NICEON</span>
+        </a>
+      </div>
+
+      <!-- Center: nav links -->
+      <div class="nav-center-col">
+        <a href="/" class="nav-link">Update</a>
+      </div>
+
+      <!-- Right: badge -->
+      <div class="nav-right-col">
+        <span class="nav-badge">Future Brief</span>
+      </div>
     </div>
   </nav>
 
