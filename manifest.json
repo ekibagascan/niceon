@@ -1,0 +1,37 @@
+{
+  "name": "NiceOn — Teknologi Masa Depan",
+  "short_name": "NiceOn",
+  "description": "Berita teknologi kapal, pesawat, drone, robot militer, dan mesin masa depan dalam bahasa Indonesia.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#F5A000",
+  "background_color": "#FFFBF5",
+  "lang": "id",
+  "categories": ["news", "technology"],
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Newsletter",
+      "short_name": "Newsletter",
+      "description": "Subscribe ke NiceOn Future Brief",
+      "url": "/newsletter/",
+      "icons": [{ "src": "/icons/icon.svg", "sizes": "any" }]
+    }
+  ]
+}

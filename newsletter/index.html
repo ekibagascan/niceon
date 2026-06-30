@@ -11,6 +11,15 @@
   <meta property="og:description" content="Rangkuman mingguan teknologi masa depan dalam bahasa Indonesia." />
   <meta property="og:type" content="website" />
 
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#F5A000" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="NiceOn" />
+  <link rel="apple-touch-icon" href="/icons/icon.svg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -1343,6 +1352,13 @@
   );
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  /* ─── SERVICE WORKER ────────────────────────────────── */
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
 </script>
 
 </body>
